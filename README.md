@@ -1,2 +1,20 @@
-# Mips-Assembler_CPP
-C++ 기반 어셈블러 구현
+# MIPS Assembler Project
+> 컴퓨터 구조를 보다 잘 이해하기 위한 C++ 기반 Mips Assembler 구현
+
+## 개요
+컴퓨터 구조를 수강하는 시점에서 소스 코드가 하드웨어에서 어떻게 해석되고 실행되는지 보다 잘 이해하기 위해 MIPS ISA를 Binary로 변환하는 Assembler을 구현했습니다. 언어는 주 언어인 java보다 저수준 제어에 최적인 C++을 사용했습니다.
+
+## 주요 구현 기능
+- Two-Pass Assembler: 레이블(Label) 주소 계산을 위한 사전 스캔 및 실제 바이너리 변환의 2단계 처리 과정 구현
+- Instruction Parsing: 공백 및 주석 제거, 토큰화를 통한 정밀한 명령어 분석 
+- ISA Mapping: R/I/J 포맷에 따른 Opcode, Funct, Register 주소 매핑 및 비트 연산 처리
+- Binary Output: 변환된 데이터를 표준 `.bin` 형식으로 출력
+
+## 기술 스택
+- 언어: C++ (비트 연산 및 문자열 파싱에 최적화)
+- 사용 툴: STL (Map, Vector, Bitset)
+
+## 학습점
+- java로 개발할 때는 당연하게 여겼던 것들(변수 선언, 함수 호출 등)이 실제 하드웨어 레벨에서는 레지스터 할당, 주소 계산 등 복잡한 단계가 필요하다는 것을 깨달았습니다.
+- 32비트 이진수로 변환, 포맷에 맞춰 slicing하여 배치 등으로 비트 단위 연산과 데이터 표현 방식에 대해 연습할 수 있었습니다.
+- 주 언어인 java의 Collections와 다른 STL을 사용하면서 적절한 자료구조 사용과 효율적 문자열 파싱 방법을 연습할 수 있었습니다.
